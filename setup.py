@@ -17,7 +17,7 @@ setup(
     author_email='rafael@rafaelmartins.eng.br',
     url='https://github.com/rafaelmartins/dnsimple-dyndns',
     packages=find_packages(),
-    install_requires=['requests'],
+    install_requires=['requests >= 2.0.0'],
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Console',
