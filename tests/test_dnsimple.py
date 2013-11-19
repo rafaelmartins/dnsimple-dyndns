@@ -44,7 +44,16 @@ def test_get_record_without_return(patched_session, dnsimple):
     assert None == dnsimple._get_record('ok')
 
 
-def test_get_record_error(patched_session, dnsimple):
+def test_get_record_invalid_json(patched_session, dnsimple):
+    response = mock.Mock(ok=True)
+    response.json.return_value = [{}]
+    patched_session().get.return_value = response
+
+    with pytest.raises(RuntimeError):
+        dnsimple._get_record('ok')
+
+
+def test_get_record_http_error(patched_session, dnsimple):
     response = mock.Mock(ok=False)
     response.json.return_value = 'any error'
     patched_session().get.return_value = response
