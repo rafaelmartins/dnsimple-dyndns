@@ -15,7 +15,7 @@ def get_external_ip():
     probably fail if the network setup is too complicated or the service is
     down.
     """
-    request = requests.get('http://icanhazip.com/')
-    if not request.ok:
-        raise RuntimeError('Failed to get external ip: %s' % request.content)
-    return request.content.strip()
+    response = requests.get('http://icanhazip.com/')
+    if not response.ok:
+        raise RuntimeError('Failed to get external ip: %s' % response.content)
+    return response.content.strip()
