@@ -48,7 +48,7 @@ class DNSimple(object):
         if 'record' not in record or 'id' not in record['record']:
             raise RuntimeError('Invalid record JSON format: %s - %s' %
                                (self._format_hostname(name), request.json()))
-        return int(record['record']['id'])
+        return record['record']
 
     def _update_record(self, record_id, name, address, ttl):
         """Updates an existing record."""
@@ -65,7 +65,7 @@ class DNSimple(object):
         if 'record' not in record or 'id' not in record['record']:
             raise RuntimeError('Invalid record JSON format: %s - %s' %
                                (self._format_hostname(name), request.json()))
-        return int(record['record']['id'])
+        return record['record']
 
     def update_record(self, name, address, ttl=60):
         """Updates a record, creating it if not exists."""
