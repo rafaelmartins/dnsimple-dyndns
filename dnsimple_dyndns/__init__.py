@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+"""
+    dnsimple_dyndns
+    ~~~~~~~~~~~~~~~
+
+    :copyright: (c) 2013 by Rafael Goncalves Martins
+    :license: BSD, see LICENSE for more details.
+"""
+
 import argparse
 
 from dnsimple_dyndns.dnsimple import DNSimple

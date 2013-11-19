@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+"""
+    dnsimple_dyndns.dnsimple
+    ~~~~~~~~~~~~~~~~~~~~~~~~
+
+    :copyright: (c) 2013 by Rafael Goncalves Martins
+    :license: BSD, see LICENSE for more details.
+"""
+
 import json
 import requests
 
