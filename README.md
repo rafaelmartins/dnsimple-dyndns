@@ -57,3 +57,20 @@ Replace ``enp3s0`` with your WAN interface, ``example.com`` with your DNSimple.c
 ``your-domain-token`` with your DNSimple.com domain token
 (see http://developer.dnsimple.com/authentication/#dnsimple-domain-token) and ``home`` with your
 desired DNS record name.
+
+
+Running as a dhcpcd hook
+------------------------
+
+To run this script as a dhcpcd hook, you should add this content to your ``/etc/dhcpcd.exit-hook`` file:
+
+```bash
+if $if_up && [ "${interface}" = "enp3s0" ]; then
+    syslog info "Updated DNS record: $(dnsimple-dyndns --ip "$new_ip_address" example.com your-domain-token home)"
+fi
+```
+
+Replace ``enp3s0`` with your WAN interface, ``example.com`` with your DNSimple.com managed domain,
+``your-domain-token`` with your DNSimple.com domain token
+(see http://developer.dnsimple.com/authentication/#dnsimple-domain-token) and ``home`` with your
+desired DNS record name.
