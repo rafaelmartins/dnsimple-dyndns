@@ -65,7 +65,7 @@ Running as a dhcpcd hook
 To run this script as a dhcpcd hook, you should add this content to your ``/etc/dhcpcd.exit-hook`` file:
 
 ```bash
-if $if_up && [ "${interface}" = "enp3s0" ]; then
+if $if_up && [ "$interface" = "enp3s0" ]; then
     syslog info "Updated DNS record: $(dnsimple-dyndns --ip "$new_ip_address" example.com your-domain-token home)"
 fi
 ```
