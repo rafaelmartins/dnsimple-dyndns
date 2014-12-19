@@ -15,7 +15,7 @@ class DNSimple(object):
 
     def __init__(self, domain, domain_token):
         self._domain = domain
-        self._baseurl = 'https://dnsimple.com/domains/%s/records' % \
+        self._baseurl = 'https://api.dnsimple.com/v1/domains/%s/records' % \
             self._domain
         self._session = requests.Session()
         self._session.headers['X-DNSimple-Domain-Token'] = domain_token
