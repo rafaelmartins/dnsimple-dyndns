@@ -19,7 +19,6 @@ setup(
     packages=find_packages(),
     install_requires=[
         'requests >= 2.0.0',
-        'python-daemon => 1.6',
     ],
     classifiers=[
         'Development Status :: 3 - Alpha',
